@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>data-show</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -16,11 +16,51 @@
     <![endif]-->
   </head>
   <body>
-    <h1>你好，世界！</h1>
+    <div class="main">
+      <div class="conainer">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="d-grade page-header">
+              <h2>等级公布</h2>
+              <div class="grade-show" id="grade-show"  style="width: 99%;height: 99%"></div>
+            </div>
+            <div class="t-account page-header">
+              <h2>团队日流水</h2>
+              <div class="day-show"></div>
+            </div>
+            <div class="t-order">
+              <h2>每日下单量</h2>
+              <div class="order-show page-header"></div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h1></h1>
+            <h4>日流水总计</h4>
+            <h3>22222</h3>
+            <h2></h2>
+            <div class="map-show"></div>
+          </div>
+          <div class="col-md-3">
+            <div class="t-achievement page-header">
+              <h2>团队业绩</h2>
+              <div class="achievement-show"></div>
+            </div>
+            <div class="new-order page-header">
+              <h2>最新订单</h2>
+              <div class="new-order-show"></div>
+            </div>
+            <div class="single-sales page-header">
+              <h2>团队业绩</h2>
+              <div class="sales-show"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/echarts.common.min.js"></script>
+    <script type="text/javascript" src="js/data-show.js"></script>
   </body>
 </html>
