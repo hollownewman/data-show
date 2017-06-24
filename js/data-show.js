@@ -20,7 +20,10 @@ $(function(){
           legend: {
               orient: 'horizontal',
               y:'bottom',
-              data:['执行董事','总代','天使','总裁','操盘合伙人']
+              data:['执行董事','总代','天使','总裁','操盘合伙人'],
+              textStyle:{
+                color:'#fff'
+               }
           },
           series: [
               {
@@ -67,6 +70,9 @@ $(function(){
     var myChart = echarts.init(document.getElementById('order-show'));
     var option = {
         color: ['#3398DB'],
+        textStyle:{
+            color:'#fff'
+        },
         tooltip : {
             trigger: 'axis',
             axisPointer : {            // 坐标轴指示器，坐标轴触发有效
@@ -360,7 +366,7 @@ $(function(){
             })
         });
     });
-console.log(series);
+
     var option = {
         backgroundColor: '#404a59',
         title : {
@@ -418,13 +424,16 @@ console.log(series);
         legend: {
             orient: 'horizontal',
             y: 'bottom',
-            data:['雄鹰团队','猛虎团队','群狼团队','神勇团队','财神团队']
+            data:['雄鹰团队','猛虎团队','群狼团队','神勇团队','财神团队'],
+            textStyle:{
+                color:'#fff'
+            }
         },
         series: [
             {
                 name:'团队业绩',
                 type:'pie',
-                radius: ['50%', '70%'],
+                radius: ['40%', '55%'],
                 avoidLabelOverlap: false,
                 label: {
                     normal: {
@@ -468,13 +477,16 @@ console.log(series);
         legend: {
             orient: 'horizontal',
             y: 'bottom',
-            data:['梦想团队','精英团队','超能团队','兄弟团队','飞跃团队']
+            data:['梦想团队','精英团队','超能团队','兄弟团队','飞跃团队'],
+            textStyle:{
+                color:'#fff'
+            }
         },
         series: [
             {
                 name:'团队业绩',
                 type:'pie',
-                radius: ['50%', '70%'],
+                radius: ['40%', '55%'],
                 avoidLabelOverlap: false,
                 label: {
                     normal: {
