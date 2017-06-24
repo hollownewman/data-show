@@ -3,7 +3,7 @@ $(function(){
 
   orderShow();
 
- // mapShow();
+  mapShow();
 
   achievementShow();
   salesShow();
@@ -13,7 +13,7 @@ $(function(){
   function gradeShow(){
     var myChart = echarts.init(document.getElementById('grade-show'));
     var option = {
-          color:['blue', 'yellow','red','green','#F700D5'],
+          color:['blue', 'green','red','yellow','#F700D5'],
           tooltip: {
               trigger: 'item',
               formatter: "{a} <br/>{b}: {c} ({d}%)"
@@ -44,9 +44,9 @@ $(function(){
                       }
                   },
                   data:[
-                      {value:335, name:'执行董事', selected:true},
-                      {value:679, name:'总代'},
-                      {value:1548, name:'天使'}
+                      {value:20000, name:'执行董事', selected:true},
+                      {value:100000, name:'总代'},
+                      {value:300000, name:'天使'}
                   ]
               },
               {
@@ -297,17 +297,19 @@ $(function(){
             name: item[0] + ' Top10',
             type: 'lines',
             zlevel: 1,
+             hoverable: false,
             effect: {
                 show: true,
                 period: 6,
                 trailLength: 0.7,
                 color: '#fff',
-                symbolSize: 3
+                symbolSize: 1
             },
             lineStyle: {
                 normal: {
                     color: color[i],
-                    width: 0,
+                    borderWidth:1,
+                    borderColor:'rgba(30,144,255,0.5)',
                     curveness: 0.2
                 }
             },
@@ -317,7 +319,7 @@ $(function(){
             name: item[0] + ' Top10',
             type: 'lines',
             zlevel: 2,
-            symbol: ['none', 'arrow'],
+            symbol: 'emptyCircle',
             symbolSize: 10,
             effect: {
                 show: true,
@@ -369,7 +371,7 @@ $(function(){
     });
 
     var option = {
-        backgroundColor: '#404a59',
+
         title : {
             text: '模拟迁徙',
             subtext: '数据纯属虚构',
@@ -402,11 +404,21 @@ $(function(){
             itemStyle: {
                 normal: {
                     areaColor: '#323c48',
-                    borderColor: '#404a59'
+                    borderColor:'rgba(100,149,237,1)',
+                    borderWidth:0.5,
                 },
                 emphasis: {
                     areaColor: '#2a333d'
                 }
+            }
+        },
+        dataRange: {
+            min : 0,
+            max : 100,
+            calculable : true,
+            color: ['#ff3333', 'orange', 'yellow','lime','aqua'],
+            textStyle:{
+                color:'#fff'
             }
         },
         series: series
