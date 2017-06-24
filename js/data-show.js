@@ -13,6 +13,7 @@ $(function(){
   function gradeShow(){
     var myChart = echarts.init(document.getElementById('grade-show'));
     var option = {
+          color:['blue', 'yellow','red','green','#F700D5'],
           tooltip: {
               trigger: 'item',
               formatter: "{a} <br/>{b}: {c} ({d}%)"
@@ -417,6 +418,7 @@ $(function(){
   function achievementShow(){
     var myChart = echarts.init(document.getElementById('achievement-show'));
     var option = {
+        color:['red', '#F700D5','yellow','blueviolet','#fff'],
         tooltip: {
             trigger: 'item',
             formatter: "{a} <br/>{b}: {c} ({d}%)"
@@ -470,6 +472,7 @@ $(function(){
   function salesShow(){
      var myChart = echarts.init(document.getElementById('sales-show'));
     var option = {
+        color:['red', 'green','yellow','blueviolet','blue'],
         tooltip: {
             trigger: 'item',
             formatter: "{a} <br/>{b}: {c} ({d}%)"
