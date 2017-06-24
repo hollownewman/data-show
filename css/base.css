@@ -1,0 +1,25 @@
+.main-bg{
+ background: #020307 url(../images/login_bg.jpg) no-repeat;
+ background-size: contain;
+  height: 2000px;
+}
+.main h2{
+  text-align: center;
+  color: #fff;
+  background: #a94254;
+  font-size: 24px;
+  padding: 10px 0;
+}
+
+.main p{
+  text-align: center;
+  color: #fff;
+  background: #42a94b;
+  font-size: 28px;
+  width:30%;
+  margin: 10px auto;
+  padding: 5px 0px;
+}
+.order-show,.grade-show,.achievement-show,.sales-show{
+  margin-top:-50px;
+}

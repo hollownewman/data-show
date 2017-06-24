@@ -8,6 +8,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -15,43 +16,63 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body class="main-bg">
     <div class="main">
       <div class="conainer">
         <div class="row">
           <div class="col-md-3">
-            <div class="d-grade page-header">
+            <div class="d-grade">
               <h2>等级公布</h2>
-              <div class="grade-show" id="grade-show"  style="width: 99%;height: 99%"></div>
+              <div class="grade-show" id="grade-show"  style="width: 99%;height: 300px;"></div>
             </div>
-            <div class="t-account page-header">
+            <div class="t-account">
               <h2>团队日流水</h2>
-              <div class="day-show"></div>
+              <div class="day-show">
+                <ul>
+                  <li>雄鹰团队       88641.00</li>
+                  <li>猛虎团队       95462.00</li>
+                  <li>群狼团队       158461.00</li>
+                  <li>神勇团队       685145.00</li>
+                  <li>财神团队       912406.00</li>
+                </ul>
+              </div>
             </div>
             <div class="t-order">
               <h2>每日下单量</h2>
-              <div class="order-show page-header"></div>
+              <div class="order-show" id="order-show" style="width: 99%;height: 300px;"></div>
             </div>
           </div>
           <div class="col-md-6">
-            <h1></h1>
-            <h4>日流水总计</h4>
+            <p>日流水总计</p>
             <h3>22222</h3>
             <h2></h2>
-            <div class="map-show"></div>
+            <div class="map-show" id="map-show" style="width: 99%;height: 700px;"></div>
           </div>
           <div class="col-md-3">
-            <div class="t-achievement page-header">
+            <div class="t-achievement">
               <h2>团队业绩</h2>
-              <div class="achievement-show"></div>
+              <div class="achievement-show" id="achievement-show" style="width: 99%;height: 300px;"></div>
             </div>
-            <div class="new-order page-header">
+            <div class="new-order">
               <h2>最新订单</h2>
-              <div class="new-order-show"></div>
+              <div class="new-order-show">
+                <ul>
+                  <li>雄鹰团队     总代      莫言      50箱面膜</li>
+                  <li>猛虎团队     执董      默默       100箱面膜</li>
+                  <li>群狼团队     总裁      悟空      50箱面膜</li>
+                  <li>神勇团队     总代      八戒      50箱面膜</li>
+                  <li>财神团队     总代      悟净      50箱面膜</li>
+                  <li>雄鹰团队     总代      莫言      50箱面膜</li>
+                  <li>猛虎团队     执董      默默       100箱面膜</li>
+                  <li>群狼团队     总裁      悟空      50箱面膜</li>
+                  <li>神勇团队     总代      八戒      50箱面膜</li>
+                  <li>财神团队     总代      悟净      50箱面膜</li>
+                </ul>
+              </div>
             </div>
-            <div class="single-sales page-header">
+            <div class="single-sales">
               <h2>团队业绩</h2>
-              <div class="sales-show"></div>
+              <div class="sales-show" id="sales-show" style="width: 99%;height: 300px;"></div>
             </div>
           </div>
         </div>
@@ -61,6 +82,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/echarts.common.min.js"></script>
+    <!-- <script type="text/javascript" src="js/china.js"></script> -->
     <script type="text/javascript" src="js/data-show.js"></script>
   </body>
 </html>
