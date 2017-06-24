@@ -1,3 +1,15 @@
+ul,li{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: normal;
+  margin-bottom: 0;
+}
+body{
+  color: #fff;
+}
 .main-bg{
  background: #020307 url(../images/login_bg.jpg) no-repeat;
  background-size: contain;
@@ -5,21 +17,33 @@
 }
 .main h2{
   text-align: center;
-  color: #fff;
-  background: #a94254;
-  font-size: 24px;
-  padding: 10px 0;
+  color: #CBD831;
+  background: #137EB5;
+  font-size: 18px;
+  padding: 5px 0;
 }
 
 .main p{
   text-align: center;
-  color: #fff;
-  background: #42a94b;
-  font-size: 28px;
+  color: #CBD831;
+  background: #137EB5;
+  font-size: 20px;
   width:30%;
   margin: 10px auto;
-  padding: 5px 0px;
+  padding: 4px 0px;
+}
+.main h3{
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
 }
 .order-show,.grade-show,.achievement-show,.sales-show{
   margin-top:-50px;
+}
+.day-show,.new-order-show{
+  text-align: center;
+  background: rgba(204, 204, 204, 0.53);
+}
+.day-show ul li{
+  line-height: 40px;
 }
