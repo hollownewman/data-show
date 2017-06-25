@@ -45,8 +45,34 @@ body{
 }
 .day-show,.new-order-show{
   text-align: center;
-  background: rgba(204, 204, 204, 0.53);
+  background: #555e7e;
 }
 .day-show ul li{
   line-height: 40px;
+}
+.day-show ul li span{
+  color: #0ed77d;
+}
+.day-show ul li b{
+  color: #E5E858;
+}
+.day-tj h3{
+  font-size: 30px;
+  color: #F3F3AD;
+}
+.day-ul-none,.day-tj-none{
+  display: none;
+}
+.new-order-show{
+  height: 200px;
+  overflow: hidden;
+}
+.new-order-show ul li{
+  text-align: left;
+  padding-left:20px;
+  //border-bottom: 1px solid #25149F;
+}
+
+.new-order-show ul li span{
+  color: #ff0000;
 }
