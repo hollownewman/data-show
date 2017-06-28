@@ -99,6 +99,11 @@ body{
   font-size: 30px;
   color: #F3F3AD;
 }
+.day-tj h5{
+  font-size: 18px;
+  text-align: center;
+  color: #ceea12;
+}
 .day-ul-none,.day-tj-none{
   display: none;
 }
@@ -117,6 +122,11 @@ body{
 }
 #grade-show{
   width: 99%;height: 250px;
+}
+h5 span.number{
+  color: #11ea1d;
+  font-size: 30px;
+  font-weight: bold;
 }
 //自适应
 @media screen and (min-width:1900px){
