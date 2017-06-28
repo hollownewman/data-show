@@ -46,6 +46,40 @@ $(function() {
         indexAl = (indexAl == 4) ? 0 : indexAl + 1;
         $(".sal-show").hide().eq(indexAl).show();
     }, 1000);
+
+    //新增9的功能
+    var num =0;
+    var t = setTimeout(timeCount(num),10000);
+    function timeCount(num){
+        
+        num+=123;
+       
+        $('.number').text(num);
+        if(num>123&&num<200){
+            num+=103;
+        }
+        if(num>200&&num<500){
+            num+=113;
+        }
+        if(num>500&&num<800){
+            num+=63;
+        }
+        if(num>800&&num<999){
+            num+=60;
+        }
+        if(num>1000&&num<1500){
+              num+=127;  
+        }
+        if(num>1500&&num<8000){
+                 num+=64; 
+        }
+        if(num>8000){
+                 num+=37; 
+        }
+        if(num<1000000){
+           var t = setTimeout(function(){timeCount(num)},10000)  
+        }
+    }
     //各等级的数量分布
     function gradeShow() {
         var myChart = echarts.init(document.getElementById('grade-show'));
