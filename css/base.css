@@ -99,6 +99,12 @@ body{
   font-size: 30px;
   color: #F3F3AD;
 }
+.day-tj h4{
+  font-size: 26px;
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
 .day-tj h5{
   font-size: 18px;
   text-align: center;
