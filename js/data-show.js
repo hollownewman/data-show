@@ -92,7 +92,7 @@ $(function() {
             legend: {
                 orient: 'horizontal',
                 y: 'bottom',
-                data: ['执行董事', '总代', '天使', '总裁', '操盘合伙人'],
+                data: ['操盘合伙人', '总裁','执行董事','总代','掌柜'],
                 textStyle: {
                     color: '#fff'
                 }
@@ -122,7 +122,7 @@ $(function() {
                     name: '总代'
                 }, {
                     value: 300000,
-                    name: '天使'
+                    name: '掌柜'
                 }]
             }, {
                 name: '各等级数量',
@@ -142,7 +142,7 @@ $(function() {
                     name: '操盘合伙人'
                 }, {
                     value: 300000,
-                    name: '天使'
+                    name: '掌柜'
                 }]
             }]
         };
@@ -224,27 +224,49 @@ $(function() {
             '新疆': [84.9023,41.748],
             '云南': [101.8652,25.1807],
             '浙江': [120.498,29.0918],
-            '重庆': [107.7539,30.1904]
+            '重庆': [107.7539,30.1904],
+            '佛山': [112.8955,23.1097],
+            '湛江': [110.3577,20.9894],
+            '深圳': [114.5435,22.5439],
+            '泉州': [118.3228,25.1147],
+            '南阳': [112.4011,33.0359],
+            '开封': [114.5764,34.6124],
+            '周口': [114.873,33.6951],
+            '青岛': [120.4651,36.3373],
+            '烟台': [120.7397,37.5128],
+            '邵阳': [110.9619,26.8121],
+            '永州': [111.709,25.752],
+            '温州': [120.498,27.8119],
+            '宁波': [121.5967,29.6466],
+            '苏州': [120.6519,31.3989],
+            '扬州': [119.4653,32.8162],
+            '六盘水': [104.7546,26.0925],
+            '安顺': [105.9082,25.9882],
+            '南充': [106.2048,31.1517],
+            '成都': [103.9526,30.7617],
+            '玉溪': [101.9312,23.8898]
         };
         var convertData = function(data) {
             var res = [];
             for (var i = 0; i < data.length; i++) {
                 var dataItem = data[i];
-                var fromCoord = geoCoordMap[dataItem[1].name];
-                var toCoord = geoCoordMap[dataItem[0].name];
+                var fromCoord = geoCoordMap[dataItem[0].name];
+                var toCoord = geoCoordMap[dataItem[1].name];
                 if (fromCoord && toCoord) {
                     res.push({
-                        fromName: dataItem[1].name,
-                        toName: dataItem[0].name,
+                        fromName: dataItem[0].name,
+                        toName: dataItem[1].name,
                         coords: [fromCoord, toCoord],
-                        value: dataItem[1].value
+                        value: dataItem[0].value
                     });
                 }
             }
             console.log(res)
             return res;
         };
-
+function randomData() {
+    return Math.round(Math.random()*1.5);
+}
         var BJData = [
                         [{name: '北京',value: 2.45}, {name: '北京'}],
                         [{name: '上海',value: 0.6}, {name: '北京'}],
@@ -277,7 +299,27 @@ $(function() {
                         [{name: '新疆',value: 1.32}, {name: '北京'}],
                         [{name: '云南',value: 4.50}, {name: '北京'}],
                         [{name: '浙江',value: 4.45}, {name: '北京'}],
-                        [{name: '重庆',value: 2.08}, {name: '北京'}]
+                        [{name: '重庆',value: 2.08}, {name: '北京'}],
+                        [{name: '佛山',value: 2.08}, {name: '北京'}],
+                        [{name: '湛江',value: 2.08}, {name: '北京'}],
+                        [{name: '深圳',value: 2.08}, {name: '北京'}],
+                        [{name: '泉州',value: 2.08}, {name: '北京'}],
+                        [{name: '南阳',value: 2.08}, {name: '北京'}],
+                        [{name: '开封',value: 2.08}, {name: '北京'}],
+                        [{name: '周口',value: 2.08}, {name: '北京'}],
+                        [{name: '青岛',value: 2.08}, {name: '北京'}],
+                        [{name: '烟台',value: 2.08}, {name: '北京'}],
+                        [{name: '邵阳',value: 2.08}, {name: '北京'}],
+                        [{name: '永州',value: 2.08}, {name: '北京'}],
+                        [{name: '温州',value: 2.08}, {name: '北京'}],
+                        [{name: '宁波',value: 2.08}, {name: '北京'}],
+                        [{name: '苏州',value: 2.08}, {name: '北京'}],
+                        [{name: '扬州',value: 2.08}, {name: '北京'}],
+                        [{name: '六盘水',value: 2.08}, {name: '北京'}],
+                        [{name: '安顺',value: 2.08}, {name: '北京'}],
+                        [{name: '南充',value: 2.08}, {name: '北京'}],
+                        [{name: '成都',value: 2.08}, {name: '北京'}],
+                        [{name: '玉溪',value: 2.08}, {name: '北京'}]
                      ];
         var option = {
             title: {
@@ -324,35 +366,27 @@ $(function() {
                     }
                 }
             },
-            dataRange: {
+           visualMap: {
                 min: 0,
                 max: 12,
+                left: 'left',
+                top: 'bottom',
+                text: ['高','低'],           // 文本，默认为数值文本
                 calculable: true,
-                color: ['#ff3333', 'orange', 'yellow', 'lime', 'aqua'],
-                textStyle: {
-                    color: '#fff'
-                }
+                 color: ['#146BF8','#11B6FE','#16FFFF']
             },
             geo: {
                 map: 'china',
-                scaleLimit:{min:1.1,max:1.1},
-                roam:false,
+                scaleLimit:{min:1.3,max:1.3},
                 label: {
+                    normal: {
+                        show: false
+                    },
                     emphasis: {
                         show: false
                     }
                 },
-                roam: true,
-                itemStyle: {
-                    normal: {
-                        areaColor: '#323c48',
-                        borderColor: 'rgba(100,149,237,1)',
-                        borderWidth: 0.5
-                    },
-                    emphasis: {
-                        areaColor: '#2a333d'
-                    }
-                },
+                roam: false, 
             },
             series: [{
                 name: '北京Top10',
@@ -361,52 +395,82 @@ $(function() {
                 zlevel: 1,
                 effect: {
                     show: true,
-                    period: 6,
-                    trailLength: 0.8,
+                    period: 7,
+                    trailLength: 0.7,
                     color: '#fff',
                     shadowBlur: 1,
                     symbolSize: 4
+                },
+                animationDuration:function (idx) {
+                    // 越往后的数据延迟越大
+                    return idx * 1000;
                 },
                 lineStyle: {
                     normal: {
                         color: 'red',
                         width: 0,
-                        curveness: 0.2
+                        curveness: 0.1
                     }
                 },
                 data: convertData(BJData)
 
             }, { 
                 name: '北京Top10',
-                type: 'effectScatter',
-                coordinateSystem: 'geo',
-                zlevel: 2,
-                rippleEffect: {
-                    brushType: 'stroke'
-                },
+                type: 'map',
+                map:'china',
+                scaleLimit:{min:1.3,max:1.3},
+                roam: false,
                 label: {
                     normal: {
-                        show: true,
-                        position: 'right',
-                        formatter: '{b}'
+                        show: false,
+                        textStyle: {
+                        color: '#fff'
+                       
+                        }
+                    },
+                    emphasis: {
+                        show: true
                     }
                 },
 
-                symbolSize: function(val) {
-                    console.log(val[2] / 4)
-                    return val[2] / 0.4;
-                },
+                data:[
+                    {name: '北京',value: 2.45 },
+                    {name: '天津',value: 0.60 },
+                    {name: '上海',value: 0.6 },
+                    {name: '重庆',value: 2.08 },
+                    {name: '河北',value: 3.93 },
+                    {name: '河南',value: 8.08 },
+                    {name: '云南',value: 4.50 },
+                    {name: '辽宁',value: 2.56 },
+                    {name: '黑龙江',value: 1.35 },
+                    {name: '湖南',value: 3.46 },
+                    {name: '安徽',value: 2.3},
+                    {name: '山东',value: 9.11 },
+                    {name: '新疆',value: 1.32 },
+                    {name: '江苏',value: 5.30 },
+                    {name: '浙江',value: 4.45 },
+                    {name: '江西',value: 1.86 },
+                    {name: '湖北',value: 3.68 },
+                    {name: '广西',value: 3.42 },
+                    {name: '甘肃',value: 1.88 },
+                    {name: '山西',value: 4.98 },
+                    {name: '内蒙古',value: 1.25 },
+                    {name: '陕西',value: 2.87 },
+                    {name: '吉林',value: 0.74 },
+                    {name: '福建',value: 3.11 },
+                    {name: '贵州',value: 5.63 },
+                    {name: '广东',value: 11.69},
+                    {name: '青海',value: 0.47 },
+                    {name: '西藏',value: 0.60 },
+                    {name: '四川',value: 4.43},
+                    {name: '宁夏',value: 0.36 },
+                    {name: '海南',value: 0.89 },
+                    {name: '香港',value:  0.01 }
+                   
+                ]
+                }
 
-                data: BJData.map(function(dataItem) {
-                    return {
-                        name: dataItem[0].name,
-                        value: geoCoordMap[dataItem[0].name].concat([dataItem[0].value])
-                    };
-                })
-
-            }]
-
-        };
+        ]};
         myChart.setOption(option);
     }
 
