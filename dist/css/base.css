@@ -1,0 +1,140 @@
+ul,li{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+html{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: normal;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+body{
+  color: #fff;
+}
+.row-padding{
+  margin-right: 15px;
+  margin-left: 15px; 
+}
+    
+.main-bg{
+ background: #020307 url(../images/login_bg.jpg) no-repeat;
+ background-size: contain;
+  height: 900px;
+}
+.main h2{
+  text-align: center;
+  color: #CBD831;
+  background: #137EB5;
+  font-size: 16px;
+  padding: 2px 0;
+}
+
+.main p{
+  text-align: center;
+  color: #CBD831;
+  background: #137EB5;
+  font-size: 20px;
+  width:30%;
+  margin: 10px auto;
+  padding: 4px 0px;
+}
+.main h3{
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
+.order-show,.grade-show,.achievement-show,.sales-show{
+  margin-top:-50px;
+}
+.sales-show{
+  margin-top:-46px;
+}
+.t-achievement,.single-sales{
+  position: relative;
+}
+.ach-show,.sal-show{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-60%);
+    -ms-transform: translate(-50%,-60%);
+    -moz-transform: translate(-50%,-60%);
+    -webkit-transform: translate(-50%,-60%);
+  z-index: 99999
+}
+.ach-show span{
+  display: block;
+  text-align: center;
+  color: #2bf51b;
+  font-size: 16px;
+  font-weight: bold;
+}
+.sal-show span{
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+.ach-show-non,.sal-show-non{
+  display: none;
+}
+.day-show,.new-order-show{
+  text-align: center;
+  background: #555e7e;
+}
+.day-show ul li{
+  line-height: 40px;
+}
+.day-show ul li span{
+  color: #0ed77d;
+}
+.day-show ul li b{
+  color: #E5E858;
+}
+.day-tj h3{
+  font-size: 30px;
+  color: #F3F3AD;
+}
+.day-tj h4{
+  font-size: 26px;
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
+.day-tj h5{
+  font-size: 18px;
+  text-align: center;
+  color: #ceea12;
+}
+.day-ul-none,.day-tj-none{
+  display: none;
+}
+.new-order-show{
+  height: 200px;
+  overflow: hidden;
+}
+.new-order-show ul li{
+  text-align: left;
+  padding-left:20px;
+  //border-bottom: 1px solid #25149F;
+}
+
+.new-order-show ul li span{
+  color: #ff0000;
+}
+#grade-show{
+  width: 99%;height: 250px;
+}
+h5 span.number{
+  color: #11ea1d;
+  font-size: 30px;
+  font-weight: bold;
+}
+//自适应
+@media screen and (min-width:1900px){
+  #grade-show{height: 300px} 
+} 
