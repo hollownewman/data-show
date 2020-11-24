@@ -1,6 +1,3 @@
-/**
- * Created by admin on 2018/5/7.
- */
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const uglify = require('uglifyjs-webpack-plugin');
